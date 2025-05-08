@@ -1,0 +1,103 @@
+Common Complexities:
+---------------------
+O(1) -> constant time
+---------------------
+example: 
+bool FindBob(List nameList)
+{
+    return false;
+}
+The length of time that this code takes to execute does not depend on the size of the input.
+No matter how big the input is to the function it will run in the same amount of time. So if the input doubles the size it will still run at the original length of time.
+ 
+----------------------------
+O(log n) -> logarithmic time
+----------------------------
+
+if input is 10,000 we'll do 4 iterations of that loop. If the input is doubled then the number of iterations only grows a bit.
+So it takes the middle of elements and throws away the rest and repeats the process until the element is found.
+The secret to getting O(log n) was to continuously divide the data in half.
+
+----------------------------
+O(n) -> linear line
+----------------------------
+bool FindBob(int n)
+{
+    for (int i = 0; i < n; i++)
+    {
+        console.WriteLine(i);
+    }
+}
+This is a loop that depends on the input.
+As the length of the input doubles the amount of time this function takes to run will also double.
+It's proportional to the size of the input.
+
+-----------------------------
+O(n log n) → linearithmic time
+-----------------------------
+void MergeSort(int[] array)
+{
+    // Simplified version of merge sort
+    // Sorts the array by dividing and merging
+}
+This is common for efficient sorting algorithms like Merge Sort and Quick Sort. 
+It divides the list (log n) and does a linear amount of work (n) at each level of division. 
+It’s much faster than O(n²) for large data.
+
+---------------------------------
+O(n^2) -> quadratic or polynomial
+---------------------------------
+void PrintAllPairs(int[] numbers)
+{
+    for (int i = 0; i < numbers.Length; i++)
+    {
+        for (int j = 0; j < numbers.Length; j++)
+        {
+            Console.WriteLine(numbers[i] + ", " + numbers[j]);
+        }
+    }
+}
+Every element interacts with every other element. 
+If input size doubles, total work becomes four times as much. 
+This happens in nested loops — common in things like comparing all pairs, matrix operations, etc.
+
+---------------------------------
+O(2^n) -> exponential time
+---------------------------------
+int Fibonacci(int n)
+{
+    if (n <= 1) return n;
+    return Fibonacci(n - 1) + Fibonacci(n - 2);
+}
+This grows very fast. 
+If you increase the input a little, the number of operations explodes.
+Recursive algorithms that branch multiple times often cause this. 
+Not efficient for large inputs.
+
+---------------------------------
+O(n!) -> factorial
+---------------------------------
+void Permutations(string str, string prefix = "")
+{
+    if (str.Length == 0)
+        Console.WriteLine(prefix);
+    else
+    {
+        for (int i = 0; i < str.Length; i++)
+        {
+            string rem = str.Substring(0, i) + str.Substring(i + 1);
+            Permutations(rem, prefix + str[i]);
+        }
+    }
+}
+Used when you're calculating all possible permutations of n items.
+Very slow for even small n — the time explodes as input grows. 
+Often found in brute-force solutions to combinatorics problems.
+
+Big-O	|        Example	|         Real Meaning
+O(1)	|     return false;	| Constant time — input size doesn't matter
+O(log n)|	Binary search	| Divide input in half each time
+O(n)	| Your divisor loop	| One check for every number up to n
+O(n²)	|  Nested loops 	| Every element compares with every other
+O(2ⁿ)	|Recursion with doubling	| Grows extremely fast
+O(n!)	|Permutations, brute-force combinations	| Horrible scaling
