@@ -14,7 +14,8 @@ No matter how big the input is to the function it will run in the same amount of
 O(log n) -> logarithmic time
 ----------------------------
 
-if input is 10,000 we'll do 4 iterations of that loop. If the input is doubled then the number of iterations only grows a bit.
+if input is 10,000 we'll do 4 iterations of that loop. 
+If the input is doubled then the number of iterations only grows a bit.
 So it takes the middle of elements and throws away the rest and repeats the process until the element is found.
 The secret to getting O(log n) was to continuously divide the data in half.
 
@@ -101,3 +102,31 @@ O(n)	| Your divisor loop	| One check for every number up to n
 O(n²)	|  Nested loops 	| Every element compares with every other
 O(2ⁿ)	|Recursion with doubling	| Grows extremely fast
 O(n!)	|Permutations, brute-force combinations	| Horrible scaling
+
+O(1) — Constant time
+➤ Always takes the same amount of time, no matter how big n is.
+
+O(log n) — Logarithmic time
+➤ Grows very slowly (e.g. 10 operations for 1,000 items if using log base 2).
+
+O(n) — Linear time
+➤ Grows directly with the input size (100 items = 100 steps).
+
+O(n log n) — Linearithmic time
+➤ Grows faster than O(n), but slower than O(n²).
+
+O(n²) — Quadratic time
+➤ Grows much faster — e.g. 100 items = 10,000 steps.
+
+O(2^n) — Exponential time
+➤ Extremely fast growth — e.g. 30 items = 1 billion steps.
+
+--------------------------------------------------------------------
+Return Type | 	    Meaning              | 	Example Use Case
+int	        |  Returns a whole number	 | Count items, return age, etc.
+double	    | Returns a decimal number	 | Calculate prices, averages, or multiples
+string	    | Returns text	             | Return names, messages, file paths
+bool	    | Returns true/false	     | Check conditions like IsUserLoggedIn()
+void	    | Returns nothing	         | Print to screen, modify data, send an email
+double[]    | Returns an array of decimal numbers | A list of decimal values like multiples
+List<int>   | Returns a list of integers | Flexible collection of numbers
