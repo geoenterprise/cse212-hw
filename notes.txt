@@ -130,3 +130,36 @@ bool	    | Returns true/false	     | Check conditions like IsUserLoggedIn()
 void	    | Returns nothing	         | Print to screen, modify data, send an email
 double[]    | Returns an array of decimal numbers | A list of decimal values like multiples
 List<int>   | Returns a list of integers | Flexible collection of numbers
+
+public class IntersectionExample
+{
+    public static HashSet<string> GetIntersection(HashSet<string> subscribers, HashSet<string> members)
+    {
+        var intersection = new HashSet<string>();
+
+        foreach (string person in subscribers)
+        {
+            if (members.Contains(person))
+            {
+                intersection.Add(person);
+            }
+        }
+
+        return intersection;
+    }
+}
+
+public class UnionExample
+{
+    public static HashSet<string> GetUnion(HashSet<string> subscribers, HashSet<string> members)
+    {
+        var union = new HashSet<string>(members); 
+
+        foreach (string person in subscribers)
+        {
+            union.Add(person);
+        }
+ 
+        return union;
+    }
+}
